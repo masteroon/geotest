@@ -30,7 +30,7 @@ export default class SignUpTeacherVerification extends Component {
     }
 
     componentDidMount(){
-        axios.post('https://geometrikit.azurewebsites.net/api/getTpassword', {
+        axios.post('http://geometrikit-ws.cfapps.io/api/getTpassword', {
             InternalPassword: 'ASOBAT'
         }).then((response) => {
             this.setState({tPassword: response.data.tpassword})

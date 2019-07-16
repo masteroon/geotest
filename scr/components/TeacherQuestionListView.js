@@ -43,7 +43,7 @@ class TeacherQuestionListView extends Component {
 
     componentDidMount () {
         this.setState({loading: true});
-        axios.post(`https://geometrikit.azurewebsites.net/api/getTeacherQuestions`,{
+        axios.post(`http://geometrikit-ws.cfapps.io/api/getTeacherQuestions`,{
             filtered: this.state.filtered,
             teacherID: this.state.teacherID,
             subjectID: this.state.subjectID,

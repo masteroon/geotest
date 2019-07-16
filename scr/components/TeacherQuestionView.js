@@ -84,7 +84,7 @@ export default class TeacherQuestionView extends Component {
             }
         })
         
-        axios.post('https://geometrikit.azurewebsites.net/api/getHint', {
+        axios.post('http://geometrikit-ws.cfapps.io/api/getHint', {
             questionID: this.state.questionID
           }
         ).then((response) => {
@@ -150,7 +150,7 @@ export default class TeacherQuestionView extends Component {
             hintsToAdd.push({...slice, questionID: this.props.navigation.getParam('questionID', 'X'), teacherID: this.props.navigation.getParam('teacherID', 'X')})
         });
         if (hintsToAdd.length){
-            axios.post('https://geometrikit.azurewebsites.net/api/addHints', hintsToAdd).catch(() => {
+            axios.post('http://geometrikit-ws.cfapps.io/api/addHints', hintsToAdd).catch(() => {
                 Alert.alert(
                   '',
                   "תקלה בחיבור לשרת, אנא נסה שוב מאוחר יותר",
@@ -161,7 +161,7 @@ export default class TeacherQuestionView extends Component {
             }).done();
         }
         if (this.state.deletedHintsIDs.length){
-            axios.post('https://geometrikit.azurewebsites.net/api/deleteHints', this.state.deletedHintsIDs).catch(() => {
+            axios.post('http://geometrikit-ws.cfapps.io/api/deleteHints', this.state.deletedHintsIDs).catch(() => {
                 Alert.alert(
                   '',
                   "תקלה בחיבור לשרת, אנא נסה שוב מאוחר יותר",
@@ -172,7 +172,7 @@ export default class TeacherQuestionView extends Component {
             }).done();
         }
         if (this.state.content != this.props.navigation.getParam('content', 'X') || this.state.picture != this.props.navigation.getParam('picture', 'X')){
-            axios.post('https://geometrikit.azurewebsites.net/api/editQuestion', {
+            axios.post('http://geometrikit-ws.cfapps.io/api/editQuestion', {
                 questionID: this.state.questionID,
                 content: this.state.content,
                 picture: this.state.picture

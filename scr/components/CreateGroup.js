@@ -68,7 +68,7 @@ export default class CreateGroup extends Component {
    }
 
    save = () => {
-    axios.post('https://geometrikit.azurewebsites.net/api/createGroup', {
+    axios.post('http://geometrikit-ws.cfapps.io/api/createGroup', {
         grade: this.state.grade,
         questionnaire: this.state.questionnaire,
         teacherID: this.state.teacherID

@@ -65,7 +65,7 @@ class TeacherHome extends Component {
 
     loadData(){
         this.setState({loading: true});
-        axios.post(`https://geometrikit.azurewebsites.net/api/getTeacherSubjects`, {
+        axios.post(`http://geometrikit-ws.cfapps.io/api/getTeacherSubjects`, {
             filtered: 'false',
             teacherID: this.state.teacherID
         })
@@ -82,7 +82,7 @@ class TeacherHome extends Component {
         })
         .done();
 
-        axios.post(`https://geometrikit.azurewebsites.net/api/getTeacherSubjects`, {
+        axios.post(`http://geometrikit-ws.cfapps.io/api/getTeacherSubjects`, {
             filtered: 'true',
             teacherID: this.state.teacherID
         })
@@ -99,7 +99,7 @@ class TeacherHome extends Component {
         })
         .done();
 
-        axios.post('https://geometrikit.azurewebsites.net/api/getTeacherGroups', {
+        axios.post('http://geometrikit-ws.cfapps.io/api/getTeacherGroups', {
             teacherID: this.state.teacherID,
         })
         .then((response) => {
@@ -118,7 +118,7 @@ class TeacherHome extends Component {
     }
 
     deleteGroup(gid){
-        axios.post(`https://geometrikit.azurewebsites.net/api/deleteTeacherGroup`, {
+        axios.post(`http://geometrikit-ws.cfapps.io/api/deleteTeacherGroup`, {
             groupID: gid
         })
         .then((response) => {

@@ -50,7 +50,7 @@ export default class HamburgerMenu extends Component {
     _loadInitialState = async () => {
         var value = await AsyncStorage.getItem('userData');
         this.setState({HebrowYear: JSON.parse(value).HebrowYear, groupID: JSON.parse(value).groupID, grade: JSON.parse(value).grade, questionnaire: JSON.parse(value).questionnaire, studentID: JSON.parse(value).userID, firstName: JSON.parse(value).firstName, lastName: JSON.parse(value).lastName, schoolName: JSON.parse(value).schoolName});
-        axios.post(`https://geometrikit.azurewebsites.net/api/isAssigned`,{
+        axios.post(`http://geometrikit-ws.cfapps.io/api/isAssigned`,{
             studentID: JSON.parse(value).userID
         })
         .then(async(response) => {

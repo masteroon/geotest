@@ -41,7 +41,7 @@ export default class AssignToGroup extends Component {
     }
 
     componentDidMount(){
-      axios.post('https://geometrikit.azurewebsites.net/api/getGroups', {
+      axios.post('http://geometrikit-ws.cfapps.io/api/getGroups', {
         userID: this.studentID
       }).then((response) => {
           for (var i in response.data) {
@@ -112,7 +112,7 @@ export default class AssignToGroup extends Component {
    }
 
   save = () => {
-    axios.post('https://geometrikit.azurewebsites.net/api/updateAssignToGroup', {
+    axios.post('http://geometrikit-ws.cfapps.io/api/updateAssignToGroup', {
         studentID: this.studentID,
         groupID: this.state.groupID,
       }
